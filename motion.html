@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Mengran's portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/animate.css"> 
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  </head>
+   
+  <body>
+    <a href="index.html"><img src="assets/img/portfolio/logo.png" style="width:50px; height:55px; top:50px; left:100px;position: fixed"></a>
+      
+    <div id="motion"> 
+    <div class="container">
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+              
+            <div class="mySlides">
+              <img src="assets/img/practice/day1.jpg" style="width:100%">
+            </div>
+              
+            <div class="mySlides">
+              <img src="assets/img/practice/valley.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <img src="assets/img/practice/budapest.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <img src="assets/img/practice/moonrise.jpg" style="width:100%">
+            </div>
+              
+            <div class="mySlides">
+              <img src="assets/img/practice/day2-3.png" style="width:100%">
+            </div>
+              
+            <div class="mySlides">
+              <img src="assets/img/practice/m.jpg" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          </div>
+        </div>     
+            <div class="row mt mb"> 
+                <div class="col-lg-4 col-ml-4">
+                    <img src="assets/img/practice/m.jpg" class="img-responsive" onclick="openModal();currentSlide(6)">
+                </div>
+                <div class="col-lg-4 col-ml-4">
+                    <img src="assets/img/practice/day1.jpg" class="img-responsive" onclick="openModal();currentSlide(1)">
+                </div>
+                <div class="col-lg-4 col-ml-4">
+                    <img src="assets/img/practice/day2-3.png" class="img-responsive" onclick="openModal();currentSlide(5)">
+                </div>    
+            </div>
+            
+            <div class="row mt mb"> 
+                <div class="col-lg-4 col-ml-4" >
+                    <img src="assets/img/portfolio/valley.jpg" class="img-responsive" onclick="openModal();currentSlide(3)">
+                </div>
+                <div class="col-lg-4 col-ml-4">
+                    <img src="assets/img/portfolio/budapest.jpg" class="img-responsive" onclick="openModal();currentSlide(4)">
+                </div>
+                <div class="col-lg-4 col-ml-4">
+                    <img src="assets/img/portfolio/moonrise.jpg" class="img-responsive" onclick="openModal();currentSlide(2)">
+                </div>
+            </div>
+            <div class="row mt mb"> 
+                <div class="col-lg-8 col-ml-8 col-lg-offset-2">
+                    <img src="assets/img/practice/light.gif" class="img-responsive" >
+                </div>
+            </div>
+            <div class="row mt mb"> 
+                <div class="col-lg-8 col-ml-8 col-lg-offset-2">
+                    <img src="assets/img/practice/matrix.gif" class="img-responsive" >
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <div id="footerwrap">
+		<div class="container"> 
+             <div class="row centered">  
+                 <div class="col-lg-8 col-ml-8 col-lg-offset-2">
+                    <a href="ui.html"><img src="assets/img/portfolio/pre.png"></a>
+                    <a href="index.html"><img src="assets/img/portfolio/home.png"></a>
+                    <a href="asthma.html" ><img src="assets/img/portfolio/nex.png"></a>
+                 </div>
+            </div>
+            <div class="row centered"> 
+                 <div class="col-lg-4 col-ml-4 col-lg-offset-4" style="margin-top: 30px;">         
+                    <h5>Designed & Coded by Mengran</h5>
+                 </div>
+             </div>
+		</div>
+	</div><!--/footerwrap -->
+      
+    <script>
+            function openModal() {
+            document.getElementById('myModal').style.display = "block";
+            }
+            window.onclick = function(event) {
+                if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = "none";
+                }
+            }
+            function closeModal() {
+              document.getElementById('myModal').style.display = "none";
+            }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+    </script>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
